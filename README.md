@@ -1,50 +1,96 @@
-# React + TypeScript + Vite
+# Тестовое задание STM Labs: Таблица пользователей с фильтрацией
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+## Описание проекта
 
-Currently, two official plugins are available:
+Этот проект представляет собой тестовое задание для компании STM Labs. Задача заключается в реализации таблицы пользователей с возможностью фильтрации по имени.
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react/README.md) uses [Babel](https://babeljs.io/) for Fast Refresh
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react-swc) uses [SWC](https://swc.rs/) for Fast Refresh
+По заданию требуется реализовать следующие компоненты:
 
-## Expanding the ESLint configuration
+- [] Индикатор загрузки
+- [] Фильтр по имени пользователя – поле ввода + кнопка сброса
+- [] Таблица с пользователями
 
-If you are developing a production application, we recommend updating the configuration to enable type aware lint rules:
+В качестве сервера использовать сервис https://randomuser.me/api/?results=15
 
-- Configure the top-level `parserOptions` property like this:
+## Использованные технологии
 
-```js
-export default tseslint.config({
-  languageOptions: {
-    // other options...
-    parserOptions: {
-      project: ['./tsconfig.node.json', './tsconfig.app.json'],
-      tsconfigRootDir: import.meta.dirname,
-    },
-  },
-})
+- React
+- TypeScript
+- Vite
+- ESLint
+
+## Установка и настройка
+
+### Требования
+
+- Node.js (версия 14 или выше)
+- Yarn или npm (менеджер пакетов)
+
+### Установка
+
+Вы можете настроить этот проект, используя либо Yarn, либо npm. Выберите предпочтительный для вас метод.
+
+#### Использование Yarn
+
+1. Клонируйте репозиторий:
+
+   ```bash
+   git clone https://github.com/hongHONK/stm-test-task.git
+   ```
+
+2. Установите зависимости:
+   ```bash
+   yarn install
+   ```
+3. Запустите сервер разработки:
+   ```bash
+   yarn dev
+   ```
+4. Откройте браузер и перейдите по адресу http://localhost:5173, чтобы увидеть приложение.
+
+#### Использование npm
+
+1. Клонируйте репозиторий:
+   ```bash
+   git clone https://github.com/hongHONK/stm-test-task.git
+   ```
+2. Установите зависимости:
+
+   ```bash
+   npm install
+   ```
+
+3. Запустите сервер разработки:
+
+   ```bash
+   npm run dev
+   ```
+
+4. Откройте браузер и перейдите по адресу http://localhost:5173, чтобы увидеть приложение.
+
+### Сборка для продакшена
+
+Для сборки проекта для продакшена выполните:
+
+```bash
+yarn build
 ```
 
-- Replace `tseslint.configs.recommended` to `tseslint.configs.recommendedTypeChecked` or `tseslint.configs.strictTypeChecked`
-- Optionally add `...tseslint.configs.stylisticTypeChecked`
-- Install [eslint-plugin-react](https://github.com/jsx-eslint/eslint-plugin-react) and update the config:
+или
 
-```js
-// eslint.config.js
-import react from 'eslint-plugin-react'
-
-export default tseslint.config({
-  // Set the react version
-  settings: { react: { version: '18.3' } },
-  plugins: {
-    // Add the react plugin
-    react,
-  },
-  rules: {
-    // other rules...
-    // Enable its recommended rules
-    ...react.configs.recommended.rules,
-    ...react.configs['jsx-runtime'].rules,
-  },
-})
+```bash
+npm run build
 ```
+
+Собранные файлы будут находиться в директории `dist`, готовые к развертыванию.
+
+### Дополнительные команды
+
+- Проверка кода с помощью линтера:
+
+  - Yarn: `yarn lint`
+  - npm: `npm run lint`
+
+- Предварительный просмотр продакшен-сборки:
+  - Yarn: `yarn preview`
+  - npm: `npm run preview`
