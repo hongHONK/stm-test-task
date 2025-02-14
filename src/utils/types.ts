@@ -9,11 +9,14 @@ export type User = {
   };
   email: string;
   phone: string;
-  registred: {
+  registered: {
     date: string;
   };
   picture: {
     thumbnail: string;
     medium: string;
+  };
+  login: {
+    uuid: string;
   };
 };
