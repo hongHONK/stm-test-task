@@ -1,5 +1,5 @@
-import useDebounce from '../../hooks/useDebounce'
 import clsx from '../../utils/clsx'
+import debounce from '../../utils/debounce';
 import styles from './SearchInput.module.css'
 
 type SearchInputProps = {
@@ -8,7 +8,7 @@ type SearchInputProps = {
 };
 
 export function SearchInput({ className, setSerchQwery, ...props }: SearchInputProps) {
-    const debouncedSerchQwery = useDebounce((value: unknown) => {
+    const debouncedSerchQwery = debounce((value: unknown) => {
         if (typeof value === 'string') {
             setSerchQwery(value);
         }
